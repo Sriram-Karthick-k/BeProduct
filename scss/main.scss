@@ -1,0 +1,9 @@
+/* vendor imports */
+@import "./vendors/bootstrap", "./vendors/fonts.scss", "./vendors/aos.scss";
+/* basics import */
+@import "./abstract/variables", "./themes/color.scss", "./defaults/basic",
+  "./defaults/reset", "./abstract/mixins", "./abstract/animation";
+/* components imports */
+@import "./layouts/footer", "./layouts/header", "./layouts/navigation";
+/* pages */
+@import "./page/index.scss";

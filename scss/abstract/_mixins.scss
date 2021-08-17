@@ -1,0 +1,47 @@
+/* grid */
+@mixin grid($count, $margin-right, $margin-bottom, $padding) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  .coloum {
+    margin-right: $margin-right;
+    margin-bottom: $margin-bottom;
+    padding: $padding;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 ((100% - (($count - 1) * $margin-right)) / $count);
+    flex: 0 0 ((100% - (($count - 1) * $margin-right)) / $count);
+    max-width: ((100% - (($count - 1) * $margin-right)) / $count);
+    &:nth-child(#{$count}n) {
+      margin-right: 0;
+    }
+    &:nth-last-line(1) {
+      margin-bottom: 0;
+    }
+  }
+}
+/* selection */
+@mixin selection($bg-color, $color) {
+  &::selection {
+    background-color: $bg-color !important;
+    color: $color !important;
+  }
+}
+@mixin commonText {
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: "Poppins";
+  line-height: 1.65;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: var(--font-light);
+}
+@mixin button($bg, $color) {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: $bg;
+  color: $color;
+  position: relative;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+/* footer */
+footer {
+  background-color: var(--footer);
+  .container {
+    padding: 25px 0;
+    .row {
+      .col {
+        /* footer text */
+        p {
+          font-size: 0.9rem;
+          color: var(--font-light);
+          span {
+            color: var(--primary);
+          }
+        }
+        /* footer icon */
+        &.icon {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          /* icon size */
+          svg {
+            width: 20px;
+            height: 20px;
+            g {
+              fill: var(--primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}

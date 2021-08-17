@@ -1,0 +1,307 @@
+/* section common start */
+.section {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+  .section_title {
+    text-align: center;
+    color: var(--font);
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 65px;
+    letter-spacing: 0px;
+    margin: 0 1% 40px;
+  }
+}
+/* section common end */
+/* feature section */
+#features {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .row {
+      max-width: 1102px;
+      margin-bottom: 15px;
+      .col {
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin: 0 1% 40px;
+        }
+        /* text container */
+        .text_container {
+          /* title text */
+          .title {
+            h4 {
+              font-size: 22px;
+              font-weight: 600;
+              line-height: 32px;
+              font-family: "Poppins";
+              text-align: center;
+              margin-bottom: 15px;
+            }
+          }
+          /* description text */
+          .description {
+            p {
+              @include commonText;
+            }
+          }
+        }
+      }
+    }
+    .button {
+      @include button(var(--secondary), var(--primary));
+      border-radius: 0;
+      &:hover {
+        background-color: var(--button-hover-1);
+      }
+    }
+  }
+}
+//featured big display
+.features_big {
+  .container {
+    .row {
+      .col {
+        /* featured image */
+        &.image {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      /* text container */
+      .text_container {
+        padding: 1rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        /* title text */
+        .text_title {
+          margin-bottom: 30px;
+          h2 {
+            font-size: 40px;
+            line-height: 50px;
+            font-weight: 500;
+            letter-spacing: 0;
+            color: var(--font);
+          }
+        }
+        .text_decription {
+          p {
+            @include commonText;
+            text-align: left;
+          }
+        }
+        .button {
+          @include button(var(--button-2), var(--secondary));
+          &:hover {
+            background-color: var(--button-2-hover);
+          }
+        }
+      }
+    }
+  }
+}
+/* prices section */
+#prices {
+  background-image: url("../images/banner_2.png");
+  background-position: center top;
+  background-repeat: repeat-x;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  .container {
+    position: relative;
+    .row {
+      margin: 0 5%;
+      .col {
+        margin-bottom: 1rem;
+        text-align: center;
+        /* type */
+        h4 {
+          color: var(--font);
+          margin-bottom: 5px;
+        }
+        /* money */
+        h3 {
+          color: var(--secondary);
+          font-size: 40px;
+          line-height: 50px;
+          font-weight: 500;
+          margin-bottom: 15px;
+        }
+        /* card items */
+        .card_items {
+          border-radius: 10px;
+          padding: 50px 50px 35px;
+          background-color: var(--card);
+        }
+        /* month */
+        P {
+          color: var(--font-light);
+          margin: 0 0 15px;
+        }
+        hr {
+          margin: 30px 0;
+          color: var(--font-light);
+        }
+        /* options div */
+        .options {
+          @include commonText;
+          text-align: left;
+          padding-left: 25px;
+          display: flex;
+          /* tick image */
+          &.tick {
+            background: url("../images/card/tick.png") no-repeat left 4px;
+          }
+          /* cross image */
+          &.cross {
+            background: url("../images/card/cross.png") no-repeat left 4px;
+          }
+        }
+        /* card button */
+        .button {
+          @include button(var(--button-2), var(--secondary));
+          &:hover {
+            background-color: var(--button-2-hover);
+          }
+        }
+      }
+    }
+  }
+}
+/* testimonial section */
+#testimonials {
+  .container {
+    padding: 0 5%;
+    /* carousel indicators */
+    .carousel-indicators {
+      /* indicator */
+      li {
+        background-color: var(--blockquote-font);
+        opacity: 0.3;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        transition: all 0.3s ease-in-out;
+        &::after {
+          content: none;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        &.active {
+          opacity: 1;
+          background-color: var(--secondary);
+        }
+      }
+    }
+    .carousel-inner {
+      .carousel-item {
+        padding-bottom: 30px;
+        /* content wrapper */
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding: 10px 30px;
+          /* element image */
+          img {
+            border-radius: 100%;
+            margin-bottom: 15px;
+          }
+          /* block quote wrapper */
+          .text_wrapper {
+            margin: 0 6% 20px;
+            padding: 30px 40px 10px;
+            background-color: var(--blockquote-bg);
+            blockquote {
+              @include commonText;
+              text-align: center;
+              text-decoration: underline;
+            }
+          }
+          /* three dots container */
+          .dots_container {
+            width: 100%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            div {
+              width: 5px;
+              height: 5px;
+              border-radius: 100%;
+              background-color: var(--secondary);
+              color: var(--secondary);
+              margin-left: 5px;
+            }
+          }
+          /* person name */
+          span {
+            font-weight: 500;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* contact section */
+#contact {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  background-color: var(--font);
+  background-image: url("../images/banner_3.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  .section_title {
+    color: var(--primary);
+  }
+  p {
+    @include commonText;
+    color: var(--primary);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* contact input */
+    input {
+      background-color: var(--primary);
+      padding: 8px 8px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: var(--font-light);
+      &:focus {
+        outline: none;
+      }
+    }
+    /* contact button */
+    .button {
+      @include button(var(--secondary), var(--primary));
+      border-radius: 0;
+      &:hover {
+        background-color: var(--button-hover-1);
+      }
+    }
+  }
+}

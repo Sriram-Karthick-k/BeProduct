@@ -1,0 +1,21 @@
+body {
+  background-color: var(--primary);
+  overflow-y: auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+*::selection {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+//cannot copy any things
+.copy-text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.text-center {
+  text-align: center;
+}
